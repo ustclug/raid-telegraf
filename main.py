@@ -16,7 +16,8 @@ def main(args):
     for adapter in result:
         for drive in result[adapter]:
             stat = result[adapter][drive]
-            print(f"raid_telegraf,device=\"{drive}\" media_error={stat['media_error']},other_error={stat['other_error']},predictive_failure={stat['predictive_failure']},firmware=\"{stat['firmware']}\",smart_alert=\"{stat['smart_alert']}\"")
+            drive = drive.replace(" ", "\ ") # escape space
+            print(f"raid_telegraf,device={drive} media_error={stat['media_error']},other_error={stat['other_error']},predictive_failure={stat['predictive_failure']},firmware=\"{stat['firmware']}\",smart_alert=\"{stat['smart_alert']}\"")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("raid-telegraf")
