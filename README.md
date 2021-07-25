@@ -13,5 +13,7 @@
 /etc/sudoer:
 
 ```
-telegraf ALL=(ALL) NOPASSWD:/opt/raid-telegraf/main.py
+telegraf ALL=(root) NOPASSWD: /opt/raid-telegraf/main.py
 ```
+
+(Or modify `/etc/sudoers.d/telegraf`)

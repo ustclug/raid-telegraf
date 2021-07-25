@@ -11,7 +11,7 @@ def main(args):
 
     result = get_disk_errors()
     # influxdb format (line protocol without timestamp):
-    # raid_telegraf,device="Drive /c0/e32/s0" media_error=0,other_error=0,predictive_failure=0,firmware="Online, Spun up",smart_alert="No"
+    # raid_telegraf,device=Drive\ /c0/e32/s0 media_error=0,other_error=0,predictive_failure=0,firmware="Online, Spun up",smart_alert="No"
 
     for adapter in result:
         for drive in result[adapter]:
