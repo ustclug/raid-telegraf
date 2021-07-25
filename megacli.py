@@ -61,7 +61,9 @@ def get_disk_errors():
             # SMART is the last message of one physical disk
             smart = STATE_RE.findall(i)[0]
             slot['smart_alert'] = smart.decode('utf-8')
-            disk = f'Drive /c{adapter}/e{enclosure_id}/s{slot_number}'
+            disk = 'Drive /c{adapter}/e{enclosure_id}/s{slot_number}'.format(
+                adapter=adapter, enclosure_id=enclosure_id, slot_number=slot_number
+            )
             info[adapter][disk] = slot
             slot = {}
     return dict(info)

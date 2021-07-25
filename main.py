@@ -7,7 +7,7 @@ def main(args):
     elif args.use == 'storcli':
         from storcli import get_disk_errors
     else:
-        raise ValueError(f'Unexpected use value: {args.use}')
+        raise ValueError('Unexpected use value: {}'.format(args.use))
 
     result = get_disk_errors()
     # influxdb format (line protocol without timestamp):
