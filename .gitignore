@@ -1,0 +1,8 @@
+__pycache__
+
+# MegaCli files
+CmdTool.log
+MegaSAS.log
+
+# StorCli files
+storcli.log*
