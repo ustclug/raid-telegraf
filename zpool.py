@@ -9,9 +9,7 @@ ZPOOL_EXEC = "/sbin/zpool"
 if not os.path.exists(ZPOOL_EXEC):
     ZPOOL_EXEC = "zpool"
 
-ENDSTR_NUM_RE = re.compile(rb'(\d+)$')
 STATE_RE = re.compile(rb': (.+)$')
-ADAPTER_RE = re.compile(rb'#(\d+)$')
 
 class ZFSPoolBase():
     def __init__(self):
