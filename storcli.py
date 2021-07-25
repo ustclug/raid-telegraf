@@ -11,7 +11,7 @@ if not os.path.exists(STORCLI_EXEC):
 class StorCliBase():
     def __init__(self):
         # self check
-        output = self.run(["/c0", "show"])
+        output = self.run(["/c0", "show", "nolog"])
         status = output['Controllers'][0]['Command Status']['Status']
         if status != 'Success':
             raise RuntimeError("Self-check failed. Did you run this script with root? (Controller status gets {} rather than 'Success')".format(status))
@@ -24,7 +24,7 @@ class StorCliBase():
         return json.loads(ret.stdout)
 
     def get_physical_disk_info(self):
-        return self.run(['/call', '/eall', '/sall', 'show', 'all'])
+        return self.run(['/call', '/eall', '/sall', 'show', 'all', 'nolog'])
 
 storcli = StorCliBase()
 

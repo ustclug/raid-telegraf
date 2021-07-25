@@ -17,7 +17,7 @@ ADAPTER_RE = re.compile(rb'#(\d+)$')
 class MegaCliBase():
     def __init__(self):
         # self check
-        output = self.run(["-AdpAllInfo", "-aAll"])
+        output = self.run(["-AdpAllInfo", "-aAll", "-NoLog"])
         if b"Adapter #0" not in output:
             raise RuntimeError("Self-check failed. Did you run this script with root?")
 
