@@ -14,7 +14,7 @@ class StorCliBase():
         output = self.run(["/c0", "show"])
         status = output['Controllers'][0]['Command Status']['Status']
         if status != 'Success':
-            raise RuntimeError(f"Self-check failed. Did you run this script with root? (Controller status gets {status} rather than 'Success')")
+            raise RuntimeError("Self-check failed. Did you run this script with root? (Controller status gets {} rather than 'Success')".format(status))
 
     def run(self, args: list):
         # Get JSON output
@@ -59,7 +59,7 @@ def get_disk_errors():
                 drive_info = adapter_response[key][0]  # WHY THIS IS A LIST???
                 state = drive_info['State']
                 spin = drive_info['Sp']
-                firmware_state = f"{state}, Spin {'Up' if spin == 'U' else 'Down'}"
+                firmware_state = "{state}, Spin {spin}".format(state=state, spin='Up' if spin == 'U' else 'Down')
                 update_dict(adapter_info, key, {
                     'firmware': firmware_state,
                 })

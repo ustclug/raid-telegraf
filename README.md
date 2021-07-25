@@ -1,5 +1,7 @@
 # raid-telegraf
 
+Compatible with Python 3.5+ (Latest Python version in Debian 9)
+
 /etc/telegraf/telegraf.d/raid.conf:
 
 ```
