@@ -8,8 +8,9 @@ Compatible with Python 3.5+ (Latest Python version in Debian 9)
 [[inputs.exec]]
  commands = ["sudo /opt/raid-telegraf/main.py --use megacli"]
  # or sudo /opt/raid-telegraf/main.py --use storcli
- timeout = "5s"
+ timeout = "30s"
  data_format = "influx"
+ interval = "5m"
 ```
 
 /etc/sudoer:
