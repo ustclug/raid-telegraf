@@ -33,13 +33,13 @@ def get_disk_errors() -> dict:
     info = {0: {}}
     for i in pdinfo:
         disk, status = i.rsplit(b":", 1)
-        disk = disk.strip()
-        status = status.strip()
+        disk = disk.strip().decode("utf-8")
+        status = status.strip().decode("utf-8")
         info[0][disk] = {
             "media_error": 0,
             "other_error": 0,
             "predictive_failure": 0,
-            "firmware": status.decode("utf-8"),
+            "firmware": status,
             "smart_alert": "N/A",
         }
     return info
