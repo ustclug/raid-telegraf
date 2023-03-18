@@ -36,3 +36,8 @@ raid_telegraf,device=Drive\ /c0/e32/s0 media_error=0,other_error=0,predictive_fa
 ```
 
 For ssacli, only "device" and "firmware" are valid, other values will be 0 or "N/A".
+
+## Limitation
+
+- Heavily relies on parsing the output of the RAID controller software.
+- Influxdb format serialization is naive.

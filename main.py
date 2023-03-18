@@ -20,6 +20,7 @@ def main(args):
         for drive in result[adapter]:
             stat = result[adapter][drive]
             drive = drive.replace(" ", "\ ")  # escape space
+            drive = drive.replace(",", "\,")  # escape comma
             print(
                 'raid_telegraf,device={drive} media_error={media_error},other_error={other_error},predictive_failure={predictive_failure},firmware="{firmware}",smart_alert="{smart_alert}"'.format(
                     drive=drive,
