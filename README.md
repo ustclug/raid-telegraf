@@ -1,6 +1,6 @@
 # raid-telegraf
 
-Compatible with Python 3.5+ (Latest Python version in Debian 9)
+Compatible with Python 3.5+ (Latest Python version in Debian 9). No third-party dependencies.
 
 /etc/telegraf/telegraf.d/raid.conf:
 
