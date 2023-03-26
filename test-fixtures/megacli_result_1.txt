@@ -1,0 +1,5 @@
+raid_telegraf,device=Drive\ /c0/e32/s2 media_error=0,other_error=92014,predictive_failure=0,firmware="Online, Spun Up",smart_alert="No"
+raid_telegraf,device=Drive\ /c0/e32/s4 media_error=0,other_error=92014,predictive_failure=0,firmware="Online, Spun Up",smart_alert="No"
+raid_telegraf,device=Drive\ /c0/e32/s6 media_error=0,other_error=92014,predictive_failure=0,firmware="Online, Spun Up",smart_alert="No"
+raid_telegraf,device=Drive\ /c0/e32/s7 media_error=0,other_error=92014,predictive_failure=0,firmware="Hotspare, Spun Up",smart_alert="No"
+raid_telegraf,device=Drive\ /c0/e32/s1 media_error=0,other_error=0,predictive_failure=0,firmware="Online, Spun Up",smart_alert="No"

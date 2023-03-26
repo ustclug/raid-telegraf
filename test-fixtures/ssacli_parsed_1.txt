@@ -1,0 +1,18 @@
+{
+  0: {
+    "physicaldrive 2I:1:5 (port 2I:box 1:bay 5, 300 GB)": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "N/A"
+    },
+    "physicaldrive 2I:1:6 (port 2I:box 1:bay 6, 300 GB)": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "Failed",
+      "smart_alert": "N/A"
+    }
+  }
+}

@@ -1,0 +1,1014 @@
+{
+"Controllers":[
+{
+	"Command Status" : {
+		"CLI Version" : "007.1513.0000.0000 Apr 01, 2021",
+		"Operating system" : "Linux 5.10.0-12-amd64",
+		"Controller" : 0,
+		"Status" : "Success",
+		"Description" : "Show Drive Information Succeeded."
+	},
+	"Response Data" : {
+		"Drive /c0/e252/s0" : [
+			{
+				"EID:Slt" : "252:0",
+				"DID" : 8,
+				"State" : "Onln",
+				"DG" : 0,
+				"Size" : "9.094 TB",
+				"Intf" : "SATA",
+				"Med" : "HDD",
+				"SED" : "N",
+				"PI" : "N",
+				"SeSz" : "512B",
+				"Model" : "HGST HUH721010000000",
+				"Sp" : "U",
+				"Type" : "-"
+			}
+		],
+		"Drive /c0/e252/s0 - Detailed Information" : {
+			"Drive /c0/e252/s0 State" : {
+				"Shield Counter" : 0,
+				"Media Error Count" : 0,
+				"Other Error Count" : 0,
+				"Drive Temperature" : " 30C (86.00 F)",
+				"Predictive Failure Count" : 0,
+				"S.M.A.R.T alert flagged by drive" : "No"
+			},
+			"Drive /c0/e252/s0 Device attributes" : {
+				"SN" : "JEKETMJZ            ",
+				"Manufacturer Id" : "ATA     ",
+				"Model Number" : "HGST HUH721010000000",
+				"NAND Vendor" : "NA",
+				"WWN" : "1234567890",
+				"Firmware Revision" : "LHGAT38Q",
+				"Raw size" : "9.095 TB [0x48c400000 Sectors]",
+				"Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Non Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Device Speed" : "6.0Gb/s",
+				"Link Speed" : "6.0Gb/s",
+				"NCQ setting" : "Enabled",
+				"Write Cache" : "N/A",
+				"Logical Sector Size" : "512B",
+				"Physical Sector Size" : "4 KB",
+				"Connector Name" : "Port 0 - 3 x1"
+			},
+			"Drive /c0/e252/s0 Policies/Settings" : {
+				"Drive position" : "DriveGroup:0, Span:0, Row:5",
+				"Enclosure position" : "1",
+				"Connected Port Number" : "0(path0) ",
+				"Sequence Number" : 2,
+				"Commissioned Spare" : "No",
+				"Emergency Spare" : "No",
+				"Last Predictive Failure Event Sequence Number" : 0,
+				"Successful diagnostics completion on" : "N/A",
+				"FDE Type" : "None",
+				"SED Capable" : "No",
+				"SED Enabled" : "No",
+				"Secured" : "No",
+				"Cryptographic Erase Capable" : "Yes",
+				"Sanitize Support" : "Not supported",
+				"Locked" : "No",
+				"Needs EKM Attention" : "No",
+				"PI Eligible" : "No",
+				"Certified" : "No",
+				"Wide Port Capable" : "No",
+				"Multipath" : "No",
+				"Port Information" : [
+					{
+						"Port" : 0,
+						"Status" : "Active",
+						"Linkspeed" : "6.0Gb/s",
+						"SAS address" : "0x4433221100000000"
+					}
+				]
+			},
+			"Inquiry Data" : "11 45 14"
+		},
+		"Drive /c0/e252/s1" : [
+			{
+				"EID:Slt" : "252:1",
+				"DID" : 13,
+				"State" : "Onln",
+				"DG" : 0,
+				"Size" : "9.094 TB",
+				"Intf" : "SATA",
+				"Med" : "HDD",
+				"SED" : "N",
+				"PI" : "N",
+				"SeSz" : "512B",
+				"Model" : "HGST HUH721010000000",
+				"Sp" : "U",
+				"Type" : "-"
+			}
+		],
+		"Drive /c0/e252/s1 - Detailed Information" : {
+			"Drive /c0/e252/s1 State" : {
+				"Shield Counter" : 0,
+				"Media Error Count" : 0,
+				"Other Error Count" : 0,
+				"Drive Temperature" : " 30C (86.00 F)",
+				"Predictive Failure Count" : 0,
+				"S.M.A.R.T alert flagged by drive" : "No"
+			},
+			"Drive /c0/e252/s1 Device attributes" : {
+				"SN" : "JEK10KRX            ",
+				"Manufacturer Id" : "ATA     ",
+				"Model Number" : "HGST HUH721010000000",
+				"NAND Vendor" : "NA",
+				"WWN" : "1234567890",
+				"Firmware Revision" : "LHGAT38Q",
+				"Raw size" : "9.095 TB [0x48c400000 Sectors]",
+				"Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Non Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Device Speed" : "6.0Gb/s",
+				"Link Speed" : "6.0Gb/s",
+				"NCQ setting" : "Enabled",
+				"Write Cache" : "N/A",
+				"Logical Sector Size" : "512B",
+				"Physical Sector Size" : "4 KB",
+				"Connector Name" : "Port 0 - 3 x1"
+			},
+			"Drive /c0/e252/s1 Policies/Settings" : {
+				"Drive position" : "DriveGroup:0, Span:0, Row:0",
+				"Enclosure position" : "0",
+				"Connected Port Number" : "1(path0) ",
+				"Sequence Number" : 2,
+				"Commissioned Spare" : "No",
+				"Emergency Spare" : "No",
+				"Last Predictive Failure Event Sequence Number" : 0,
+				"Successful diagnostics completion on" : "N/A",
+				"FDE Type" : "None",
+				"SED Capable" : "No",
+				"SED Enabled" : "No",
+				"Secured" : "No",
+				"Cryptographic Erase Capable" : "Yes",
+				"Sanitize Support" : "Not supported",
+				"Locked" : "No",
+				"Needs EKM Attention" : "No",
+				"PI Eligible" : "No",
+				"Certified" : "No",
+				"Wide Port Capable" : "No",
+				"Multipath" : "No",
+				"Port Information" : [
+					{
+						"Port" : 0,
+						"Status" : "Active",
+						"Linkspeed" : "6.0Gb/s",
+						"SAS address" : "0x4433221101000000"
+					}
+				]
+			},
+			"Inquiry Data" : "11 45 14"
+		},
+		"Drive /c0/e252/s4" : [
+			{
+				"EID:Slt" : "252:4",
+				"DID" : 11,
+				"State" : "Onln",
+				"DG" : 0,
+				"Size" : "9.094 TB",
+				"Intf" : "SATA",
+				"Med" : "HDD",
+				"SED" : "N",
+				"PI" : "N",
+				"SeSz" : "512B",
+				"Model" : "HGST HUH721010000000",
+				"Sp" : "U",
+				"Type" : "-"
+			}
+		],
+		"Drive /c0/e252/s4 - Detailed Information" : {
+			"Drive /c0/e252/s4 State" : {
+				"Shield Counter" : 0,
+				"Media Error Count" : 0,
+				"Other Error Count" : 0,
+				"Drive Temperature" : " 26C (78.80 F)",
+				"Predictive Failure Count" : 0,
+				"S.M.A.R.T alert flagged by drive" : "No"
+			},
+			"Drive /c0/e252/s4 Device attributes" : {
+				"SN" : "JEKJDNHZ            ",
+				"Manufacturer Id" : "ATA     ",
+				"Model Number" : "HGST HUH721010000000",
+				"NAND Vendor" : "NA",
+				"WWN" : "1234567890",
+				"Firmware Revision" : "LHGAT38Q",
+				"Raw size" : "9.095 TB [0x48c400000 Sectors]",
+				"Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Non Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Device Speed" : "6.0Gb/s",
+				"Link Speed" : "6.0Gb/s",
+				"NCQ setting" : "Enabled",
+				"Write Cache" : "N/A",
+				"Logical Sector Size" : "512B",
+				"Physical Sector Size" : "4 KB",
+				"Connector Name" : "Port 4 - 7 x1"
+			},
+			"Drive /c0/e252/s4 Policies/Settings" : {
+				"Drive position" : "DriveGroup:0, Span:0, Row:2",
+				"Enclosure position" : "0",
+				"Connected Port Number" : "2(path0) ",
+				"Sequence Number" : 2,
+				"Commissioned Spare" : "No",
+				"Emergency Spare" : "No",
+				"Last Predictive Failure Event Sequence Number" : 0,
+				"Successful diagnostics completion on" : "N/A",
+				"FDE Type" : "None",
+				"SED Capable" : "No",
+				"SED Enabled" : "No",
+				"Secured" : "No",
+				"Cryptographic Erase Capable" : "Yes",
+				"Sanitize Support" : "Not supported",
+				"Locked" : "No",
+				"Needs EKM Attention" : "No",
+				"PI Eligible" : "No",
+				"Certified" : "No",
+				"Wide Port Capable" : "No",
+				"Multipath" : "No",
+				"Port Information" : [
+					{
+						"Port" : 0,
+						"Status" : "Active",
+						"Linkspeed" : "6.0Gb/s",
+						"SAS address" : "0x4433221104000000"
+					}
+				]
+			},
+			"Inquiry Data" : "11 45 14"
+		},
+		"Drive /c0/e252/s5" : [
+			{
+				"EID:Slt" : "252:5",
+				"DID" : 9,
+				"State" : "Onln",
+				"DG" : 0,
+				"Size" : "9.094 TB",
+				"Intf" : "SATA",
+				"Med" : "HDD",
+				"SED" : "N",
+				"PI" : "N",
+				"SeSz" : "512B",
+				"Model" : "HGST HUH721010000000",
+				"Sp" : "U",
+				"Type" : "-"
+			}
+		],
+		"Drive /c0/e252/s5 - Detailed Information" : {
+			"Drive /c0/e252/s5 State" : {
+				"Shield Counter" : 0,
+				"Media Error Count" : 0,
+				"Other Error Count" : 0,
+				"Drive Temperature" : " 26C (78.80 F)",
+				"Predictive Failure Count" : 0,
+				"S.M.A.R.T alert flagged by drive" : "No"
+			},
+			"Drive /c0/e252/s5 Device attributes" : {
+				"SN" : "JEKHML7Z            ",
+				"Manufacturer Id" : "ATA     ",
+				"Model Number" : "HGST HUH721010000000",
+				"NAND Vendor" : "NA",
+				"WWN" : "1234567890",
+				"Firmware Revision" : "LHGAT38Q",
+				"Raw size" : "9.095 TB [0x48c400000 Sectors]",
+				"Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Non Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Device Speed" : "6.0Gb/s",
+				"Link Speed" : "6.0Gb/s",
+				"NCQ setting" : "Enabled",
+				"Write Cache" : "N/A",
+				"Logical Sector Size" : "512B",
+				"Physical Sector Size" : "4 KB",
+				"Connector Name" : "Port 4 - 7 x1"
+			},
+			"Drive /c0/e252/s5 Policies/Settings" : {
+				"Drive position" : "DriveGroup:0, Span:0, Row:4",
+				"Enclosure position" : "0",
+				"Connected Port Number" : "3(path0) ",
+				"Sequence Number" : 2,
+				"Commissioned Spare" : "No",
+				"Emergency Spare" : "No",
+				"Last Predictive Failure Event Sequence Number" : 0,
+				"Successful diagnostics completion on" : "N/A",
+				"FDE Type" : "None",
+				"SED Capable" : "No",
+				"SED Enabled" : "No",
+				"Secured" : "No",
+				"Cryptographic Erase Capable" : "Yes",
+				"Sanitize Support" : "Not supported",
+				"Locked" : "No",
+				"Needs EKM Attention" : "No",
+				"PI Eligible" : "No",
+				"Certified" : "No",
+				"Wide Port Capable" : "No",
+				"Multipath" : "No",
+				"Port Information" : [
+					{
+						"Port" : 0,
+						"Status" : "Active",
+						"Linkspeed" : "6.0Gb/s",
+						"SAS address" : "0x4433221105000000"
+					}
+				]
+			},
+			"Inquiry Data" : "11 45 14"
+		},
+		"Drive /c0/e252/s6" : [
+			{
+				"EID:Slt" : "252:6",
+				"DID" : 10,
+				"State" : "Onln",
+				"DG" : 0,
+				"Size" : "9.094 TB",
+				"Intf" : "SATA",
+				"Med" : "HDD",
+				"SED" : "N",
+				"PI" : "N",
+				"SeSz" : "512B",
+				"Model" : "HGST HUH721010000000",
+				"Sp" : "U",
+				"Type" : "-"
+			}
+		],
+		"Drive /c0/e252/s6 - Detailed Information" : {
+			"Drive /c0/e252/s6 State" : {
+				"Shield Counter" : 0,
+				"Media Error Count" : 0,
+				"Other Error Count" : 0,
+				"Drive Temperature" : " 26C (78.80 F)",
+				"Predictive Failure Count" : 0,
+				"S.M.A.R.T alert flagged by drive" : "No"
+			},
+			"Drive /c0/e252/s6 Device attributes" : {
+				"SN" : "JEKJ2R1Z            ",
+				"Manufacturer Id" : "ATA     ",
+				"Model Number" : "HGST HUH721010000000",
+				"NAND Vendor" : "NA",
+				"WWN" : "1234567890",
+				"Firmware Revision" : "LHGAT38Q",
+				"Raw size" : "9.095 TB [0x48c400000 Sectors]",
+				"Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Non Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Device Speed" : "6.0Gb/s",
+				"Link Speed" : "6.0Gb/s",
+				"NCQ setting" : "Enabled",
+				"Write Cache" : "N/A",
+				"Logical Sector Size" : "512B",
+				"Physical Sector Size" : "4 KB",
+				"Connector Name" : "Port 4 - 7 x1"
+			},
+			"Drive /c0/e252/s6 Policies/Settings" : {
+				"Drive position" : "DriveGroup:0, Span:0, Row:3",
+				"Enclosure position" : "0",
+				"Connected Port Number" : "4(path0) ",
+				"Sequence Number" : 2,
+				"Commissioned Spare" : "No",
+				"Emergency Spare" : "No",
+				"Last Predictive Failure Event Sequence Number" : 0,
+				"Successful diagnostics completion on" : "N/A",
+				"FDE Type" : "None",
+				"SED Capable" : "No",
+				"SED Enabled" : "No",
+				"Secured" : "No",
+				"Cryptographic Erase Capable" : "Yes",
+				"Sanitize Support" : "Not supported",
+				"Locked" : "No",
+				"Needs EKM Attention" : "No",
+				"PI Eligible" : "No",
+				"Certified" : "No",
+				"Wide Port Capable" : "No",
+				"Multipath" : "No",
+				"Port Information" : [
+					{
+						"Port" : 0,
+						"Status" : "Active",
+						"Linkspeed" : "6.0Gb/s",
+						"SAS address" : "0x4433221106000000"
+					}
+				]
+			},
+			"Inquiry Data" : "11 45 14"
+		},
+		"Drive /c0/e252/s7" : [
+			{
+				"EID:Slt" : "252:7",
+				"DID" : 12,
+				"State" : "Onln",
+				"DG" : 0,
+				"Size" : "9.094 TB",
+				"Intf" : "SATA",
+				"Med" : "HDD",
+				"SED" : "N",
+				"PI" : "N",
+				"SeSz" : "512B",
+				"Model" : "HGST HUH721010000000",
+				"Sp" : "U",
+				"Type" : "-"
+			}
+		],
+		"Drive /c0/e252/s7 - Detailed Information" : {
+			"Drive /c0/e252/s7 State" : {
+				"Shield Counter" : 0,
+				"Media Error Count" : 0,
+				"Other Error Count" : 0,
+				"Drive Temperature" : " 26C (78.80 F)",
+				"Predictive Failure Count" : 0,
+				"S.M.A.R.T alert flagged by drive" : "No"
+			},
+			"Drive /c0/e252/s7 Device attributes" : {
+				"SN" : "JEKHBGPZ            ",
+				"Manufacturer Id" : "ATA     ",
+				"Model Number" : "HGST HUH721010000000",
+				"NAND Vendor" : "NA",
+				"WWN" : "1234567890",
+				"Firmware Revision" : "LHGAT38Q",
+				"Raw size" : "9.095 TB [0x48c400000 Sectors]",
+				"Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Non Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Device Speed" : "6.0Gb/s",
+				"Link Speed" : "6.0Gb/s",
+				"NCQ setting" : "Enabled",
+				"Write Cache" : "N/A",
+				"Logical Sector Size" : "512B",
+				"Physical Sector Size" : "4 KB",
+				"Connector Name" : "Port 4 - 7 x1"
+			},
+			"Drive /c0/e252/s7 Policies/Settings" : {
+				"Drive position" : "DriveGroup:0, Span:0, Row:1",
+				"Enclosure position" : "0",
+				"Connected Port Number" : "5(path0) ",
+				"Sequence Number" : 2,
+				"Commissioned Spare" : "No",
+				"Emergency Spare" : "No",
+				"Last Predictive Failure Event Sequence Number" : 0,
+				"Successful diagnostics completion on" : "N/A",
+				"FDE Type" : "None",
+				"SED Capable" : "No",
+				"SED Enabled" : "No",
+				"Secured" : "No",
+				"Cryptographic Erase Capable" : "Yes",
+				"Sanitize Support" : "Not supported",
+				"Locked" : "No",
+				"Needs EKM Attention" : "No",
+				"PI Eligible" : "No",
+				"Certified" : "No",
+				"Wide Port Capable" : "No",
+				"Multipath" : "No",
+				"Port Information" : [
+					{
+						"Port" : 0,
+						"Status" : "Active",
+						"Linkspeed" : "6.0Gb/s",
+						"SAS address" : "0x4433221107000000"
+					}
+				]
+			},
+			"Inquiry Data" : "11 45 14"
+		}
+	}
+},
+{
+	"Command Status" : {
+		"CLI Version" : "007.1513.0000.0000 Apr 01, 2021",
+		"Operating system" : "Linux 5.10.0-12-amd64",
+		"Controller" : 1,
+		"Status" : "Success",
+		"Description" : "Show Drive Information Succeeded."
+	},
+	"Response Data" : {
+		"Drive /c1/e252/s0" : [
+			{
+				"EID:Slt" : "252:0",
+				"DID" : 8,
+				"State" : "Onln",
+				"DG" : 0,
+				"Size" : "9.094 TB",
+				"Intf" : "SATA",
+				"Med" : "HDD",
+				"SED" : "N",
+				"PI" : "N",
+				"SeSz" : "512B",
+				"Model" : "HGST HUH721010000000",
+				"Sp" : "U",
+				"Type" : "-"
+			}
+		],
+		"Drive /c1/e252/s0 - Detailed Information" : {
+			"Drive /c1/e252/s0 State" : {
+				"Shield Counter" : 0,
+				"Media Error Count" : 0,
+				"Other Error Count" : 0,
+				"Drive Temperature" : " 28C (82.40 F)",
+				"Predictive Failure Count" : 0,
+				"S.M.A.R.T alert flagged by drive" : "No"
+			},
+			"Drive /c1/e252/s0 Device attributes" : {
+				"SN" : "JEKJ2HWZ            ",
+				"Manufacturer Id" : "ATA     ",
+				"Model Number" : "HGST HUH721010000000",
+				"NAND Vendor" : "NA",
+				"WWN" : "1234567890",
+				"Firmware Revision" : "LHGAT38Q",
+				"Raw size" : "9.095 TB [0x48c400000 Sectors]",
+				"Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Non Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Device Speed" : "6.0Gb/s",
+				"Link Speed" : "6.0Gb/s",
+				"NCQ setting" : "Enabled",
+				"Write Cache" : "N/A",
+				"Logical Sector Size" : "512B",
+				"Physical Sector Size" : "4 KB",
+				"Connector Name" : "Port 0 - 3 x1"
+			},
+			"Drive /c1/e252/s0 Policies/Settings" : {
+				"Drive position" : "DriveGroup:0, Span:0, Row:0",
+				"Enclosure position" : "0",
+				"Connected Port Number" : "0(path0) ",
+				"Sequence Number" : 2,
+				"Commissioned Spare" : "No",
+				"Emergency Spare" : "No",
+				"Last Predictive Failure Event Sequence Number" : 0,
+				"Successful diagnostics completion on" : "N/A",
+				"FDE Type" : "None",
+				"SED Capable" : "No",
+				"SED Enabled" : "No",
+				"Secured" : "No",
+				"Cryptographic Erase Capable" : "Yes",
+				"Sanitize Support" : "Not supported",
+				"Locked" : "No",
+				"Needs EKM Attention" : "No",
+				"PI Eligible" : "No",
+				"Certified" : "No",
+				"Wide Port Capable" : "No",
+				"Multipath" : "No",
+				"Port Information" : [
+					{
+						"Port" : 0,
+						"Status" : "Active",
+						"Linkspeed" : "6.0Gb/s",
+						"SAS address" : "0x4433221100000000"
+					}
+				]
+			},
+			"Inquiry Data" : "11 45 14"
+		},
+		"Drive /c1/e252/s1" : [
+			{
+				"EID:Slt" : "252:1",
+				"DID" : 9,
+				"State" : "Onln",
+				"DG" : 0,
+				"Size" : "9.094 TB",
+				"Intf" : "SATA",
+				"Med" : "HDD",
+				"SED" : "N",
+				"PI" : "N",
+				"SeSz" : "512B",
+				"Model" : "HGST HUH721010000000",
+				"Sp" : "U",
+				"Type" : "-"
+			}
+		],
+		"Drive /c1/e252/s1 - Detailed Information" : {
+			"Drive /c1/e252/s1 State" : {
+				"Shield Counter" : 0,
+				"Media Error Count" : 0,
+				"Other Error Count" : 0,
+				"Drive Temperature" : " 26C (78.80 F)",
+				"Predictive Failure Count" : 0,
+				"S.M.A.R.T alert flagged by drive" : "No"
+			},
+			"Drive /c1/e252/s1 Device attributes" : {
+				"SN" : "JEKJ37DZ            ",
+				"Manufacturer Id" : "ATA     ",
+				"Model Number" : "HGST HUH721010000000",
+				"NAND Vendor" : "NA",
+				"WWN" : "1234567890",
+				"Firmware Revision" : "LHGAT38Q",
+				"Raw size" : "9.095 TB [0x48c400000 Sectors]",
+				"Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Non Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Device Speed" : "6.0Gb/s",
+				"Link Speed" : "6.0Gb/s",
+				"NCQ setting" : "Enabled",
+				"Write Cache" : "N/A",
+				"Logical Sector Size" : "512B",
+				"Physical Sector Size" : "4 KB",
+				"Connector Name" : "Port 0 - 3 x1"
+			},
+			"Drive /c1/e252/s1 Policies/Settings" : {
+				"Drive position" : "DriveGroup:0, Span:0, Row:5",
+				"Enclosure position" : "0",
+				"Connected Port Number" : "1(path0) ",
+				"Sequence Number" : 2,
+				"Commissioned Spare" : "No",
+				"Emergency Spare" : "No",
+				"Last Predictive Failure Event Sequence Number" : 0,
+				"Successful diagnostics completion on" : "N/A",
+				"FDE Type" : "None",
+				"SED Capable" : "No",
+				"SED Enabled" : "No",
+				"Secured" : "No",
+				"Cryptographic Erase Capable" : "Yes",
+				"Sanitize Support" : "Not supported",
+				"Locked" : "No",
+				"Needs EKM Attention" : "No",
+				"PI Eligible" : "No",
+				"Certified" : "No",
+				"Wide Port Capable" : "No",
+				"Multipath" : "No",
+				"Port Information" : [
+					{
+						"Port" : 0,
+						"Status" : "Active",
+						"Linkspeed" : "6.0Gb/s",
+						"SAS address" : "0x4433221101000000"
+					}
+				]
+			},
+			"Inquiry Data" : "11 45 14"
+		},
+		"Drive /c1/e252/s2" : [
+			{
+				"EID:Slt" : "252:2",
+				"DID" : 14,
+				"State" : "Onln",
+				"DG" : 0,
+				"Size" : "9.094 TB",
+				"Intf" : "SATA",
+				"Med" : "HDD",
+				"SED" : "N",
+				"PI" : "N",
+				"SeSz" : "512B",
+				"Model" : "HGST HUH721010000000",
+				"Sp" : "U",
+				"Type" : "-"
+			}
+		],
+		"Drive /c1/e252/s2 - Detailed Information" : {
+			"Drive /c1/e252/s2 State" : {
+				"Shield Counter" : 0,
+				"Media Error Count" : 0,
+				"Other Error Count" : 0,
+				"Drive Temperature" : " 25C (77.00 F)",
+				"Predictive Failure Count" : 0,
+				"S.M.A.R.T alert flagged by drive" : "No"
+			},
+			"Drive /c1/e252/s2 Device attributes" : {
+				"SN" : "JEK11ZEX            ",
+				"Manufacturer Id" : "ATA     ",
+				"Model Number" : "HGST HUH721010000000",
+				"NAND Vendor" : "NA",
+				"WWN" : "1234567890",
+				"Firmware Revision" : "LHGAT38Q",
+				"Raw size" : "9.095 TB [0x48c400000 Sectors]",
+				"Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Non Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Device Speed" : "6.0Gb/s",
+				"Link Speed" : "6.0Gb/s",
+				"NCQ setting" : "Enabled",
+				"Write Cache" : "N/A",
+				"Logical Sector Size" : "512B",
+				"Physical Sector Size" : "4 KB",
+				"Connector Name" : "Port 0 - 3 x1"
+			},
+			"Drive /c1/e252/s2 Policies/Settings" : {
+				"Drive position" : "DriveGroup:0, Span:0, Row:1",
+				"Enclosure position" : "0",
+				"Connected Port Number" : "2(path0) ",
+				"Sequence Number" : 2,
+				"Commissioned Spare" : "No",
+				"Emergency Spare" : "No",
+				"Last Predictive Failure Event Sequence Number" : 0,
+				"Successful diagnostics completion on" : "N/A",
+				"FDE Type" : "None",
+				"SED Capable" : "No",
+				"SED Enabled" : "No",
+				"Secured" : "No",
+				"Cryptographic Erase Capable" : "Yes",
+				"Sanitize Support" : "Not supported",
+				"Locked" : "No",
+				"Needs EKM Attention" : "No",
+				"PI Eligible" : "No",
+				"Certified" : "No",
+				"Wide Port Capable" : "No",
+				"Multipath" : "No",
+				"Port Information" : [
+					{
+						"Port" : 0,
+						"Status" : "Active",
+						"Linkspeed" : "6.0Gb/s",
+						"SAS address" : "0x4433221102000000"
+					}
+				]
+			},
+			"Inquiry Data" : "11 45 14"
+		},
+		"Drive /c1/e252/s3" : [
+			{
+				"EID:Slt" : "252:3",
+				"DID" : 10,
+				"State" : "Onln",
+				"DG" : 0,
+				"Size" : "9.094 TB",
+				"Intf" : "SATA",
+				"Med" : "HDD",
+				"SED" : "N",
+				"PI" : "N",
+				"SeSz" : "512B",
+				"Model" : "HGST HUH721010000000",
+				"Sp" : "U",
+				"Type" : "-"
+			}
+		],
+		"Drive /c1/e252/s3 - Detailed Information" : {
+			"Drive /c1/e252/s3 State" : {
+				"Shield Counter" : 0,
+				"Media Error Count" : 0,
+				"Other Error Count" : 0,
+				"Drive Temperature" : " 26C (78.80 F)",
+				"Predictive Failure Count" : 0,
+				"S.M.A.R.T alert flagged by drive" : "No"
+			},
+			"Drive /c1/e252/s3 Device attributes" : {
+				"SN" : "JEKJ2SJZ            ",
+				"Manufacturer Id" : "ATA     ",
+				"Model Number" : "HGST HUH721010000000",
+				"NAND Vendor" : "NA",
+				"WWN" : "1234567890",
+				"Firmware Revision" : "LHGAT38Q",
+				"Raw size" : "9.095 TB [0x48c400000 Sectors]",
+				"Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Non Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Device Speed" : "6.0Gb/s",
+				"Link Speed" : "6.0Gb/s",
+				"NCQ setting" : "Enabled",
+				"Write Cache" : "N/A",
+				"Logical Sector Size" : "512B",
+				"Physical Sector Size" : "4 KB",
+				"Connector Name" : "Port 0 - 3 x1"
+			},
+			"Drive /c1/e252/s3 Policies/Settings" : {
+				"Drive position" : "DriveGroup:0, Span:0, Row:4",
+				"Enclosure position" : "0",
+				"Connected Port Number" : "3(path0) ",
+				"Sequence Number" : 2,
+				"Commissioned Spare" : "No",
+				"Emergency Spare" : "No",
+				"Last Predictive Failure Event Sequence Number" : 0,
+				"Successful diagnostics completion on" : "N/A",
+				"FDE Type" : "None",
+				"SED Capable" : "No",
+				"SED Enabled" : "No",
+				"Secured" : "No",
+				"Cryptographic Erase Capable" : "Yes",
+				"Sanitize Support" : "Not supported",
+				"Locked" : "No",
+				"Needs EKM Attention" : "No",
+				"PI Eligible" : "No",
+				"Certified" : "No",
+				"Wide Port Capable" : "No",
+				"Multipath" : "No",
+				"Port Information" : [
+					{
+						"Port" : 0,
+						"Status" : "Active",
+						"Linkspeed" : "6.0Gb/s",
+						"SAS address" : "0x4433221103000000"
+					}
+				]
+			},
+			"Inquiry Data" : "11 45 14"
+		},
+		"Drive /c1/e252/s4" : [
+			{
+				"EID:Slt" : "252:4",
+				"DID" : 11,
+				"State" : "Onln",
+				"DG" : 0,
+				"Size" : "9.094 TB",
+				"Intf" : "SATA",
+				"Med" : "HDD",
+				"SED" : "N",
+				"PI" : "N",
+				"SeSz" : "512B",
+				"Model" : "HGST HUH721010000000",
+				"Sp" : "U",
+				"Type" : "-"
+			}
+		],
+		"Drive /c1/e252/s4 - Detailed Information" : {
+			"Drive /c1/e252/s4 State" : {
+				"Shield Counter" : 0,
+				"Media Error Count" : 0,
+				"Other Error Count" : 0,
+				"Drive Temperature" : " 27C (80.60 F)",
+				"Predictive Failure Count" : 0,
+				"S.M.A.R.T alert flagged by drive" : "No"
+			},
+			"Drive /c1/e252/s4 Device attributes" : {
+				"SN" : "JEKJ2SNZ            ",
+				"Manufacturer Id" : "ATA     ",
+				"Model Number" : "HGST HUH721010000000",
+				"NAND Vendor" : "NA",
+				"WWN" : "1234567890",
+				"Firmware Revision" : "LHGAT38Q",
+				"Raw size" : "9.095 TB [0x48c400000 Sectors]",
+				"Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Non Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Device Speed" : "6.0Gb/s",
+				"Link Speed" : "6.0Gb/s",
+				"NCQ setting" : "Enabled",
+				"Write Cache" : "N/A",
+				"Logical Sector Size" : "512B",
+				"Physical Sector Size" : "4 KB",
+				"Connector Name" : "Port 4 - 7 x1"
+			},
+			"Drive /c1/e252/s4 Policies/Settings" : {
+				"Drive position" : "DriveGroup:0, Span:0, Row:3",
+				"Enclosure position" : "0",
+				"Connected Port Number" : "4(path0) ",
+				"Sequence Number" : 2,
+				"Commissioned Spare" : "No",
+				"Emergency Spare" : "No",
+				"Last Predictive Failure Event Sequence Number" : 0,
+				"Successful diagnostics completion on" : "N/A",
+				"FDE Type" : "None",
+				"SED Capable" : "No",
+				"SED Enabled" : "No",
+				"Secured" : "No",
+				"Cryptographic Erase Capable" : "Yes",
+				"Sanitize Support" : "Not supported",
+				"Locked" : "No",
+				"Needs EKM Attention" : "No",
+				"PI Eligible" : "No",
+				"Certified" : "No",
+				"Wide Port Capable" : "No",
+				"Multipath" : "No",
+				"Port Information" : [
+					{
+						"Port" : 0,
+						"Status" : "Active",
+						"Linkspeed" : "6.0Gb/s",
+						"SAS address" : "0x4433221104000000"
+					}
+				]
+			},
+			"Inquiry Data" : "11 45 14"
+		},
+		"Drive /c1/e252/s5" : [
+			{
+				"EID:Slt" : "252:5",
+				"DID" : 12,
+				"State" : "Onln",
+				"DG" : 0,
+				"Size" : "9.094 TB",
+				"Intf" : "SATA",
+				"Med" : "HDD",
+				"SED" : "N",
+				"PI" : "N",
+				"SeSz" : "512B",
+				"Model" : "HGST HUH721010000000",
+				"Sp" : "U",
+				"Type" : "-"
+			}
+		],
+		"Drive /c1/e252/s5 - Detailed Information" : {
+			"Drive /c1/e252/s5 State" : {
+				"Shield Counter" : 0,
+				"Media Error Count" : 0,
+				"Other Error Count" : 0,
+				"Drive Temperature" : " 26C (78.80 F)",
+				"Predictive Failure Count" : 0,
+				"S.M.A.R.T alert flagged by drive" : "No"
+			},
+			"Drive /c1/e252/s5 Device attributes" : {
+				"SN" : "JEKESZ7Z            ",
+				"Manufacturer Id" : "ATA     ",
+				"Model Number" : "HGST HUH721010000000",
+				"NAND Vendor" : "NA",
+				"WWN" : "1234567890",
+				"Firmware Revision" : "LHGAT38Q",
+				"Raw size" : "9.095 TB [0x48c400000 Sectors]",
+				"Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Non Coerced size" : "9.094 TB [0x48c300000 Sectors]",
+				"Device Speed" : "6.0Gb/s",
+				"Link Speed" : "6.0Gb/s",
+				"NCQ setting" : "Enabled",
+				"Write Cache" : "N/A",
+				"Logical Sector Size" : "512B",
+				"Physical Sector Size" : "4 KB",
+				"Connector Name" : "Port 4 - 7 x1"
+			},
+			"Drive /c1/e252/s5 Policies/Settings" : {
+				"Drive position" : "DriveGroup:0, Span:0, Row:2",
+				"Enclosure position" : "0",
+				"Connected Port Number" : "6(path0) ",
+				"Sequence Number" : 2,
+				"Commissioned Spare" : "No",
+				"Emergency Spare" : "No",
+				"Last Predictive Failure Event Sequence Number" : 0,
+				"Successful diagnostics completion on" : "N/A",
+				"FDE Type" : "None",
+				"SED Capable" : "No",
+				"SED Enabled" : "No",
+				"Secured" : "No",
+				"Cryptographic Erase Capable" : "Yes",
+				"Sanitize Support" : "Not supported",
+				"Locked" : "No",
+				"Needs EKM Attention" : "No",
+				"PI Eligible" : "No",
+				"Certified" : "No",
+				"Wide Port Capable" : "No",
+				"Multipath" : "No",
+				"Port Information" : [
+					{
+						"Port" : 0,
+						"Status" : "Active",
+						"Linkspeed" : "6.0Gb/s",
+						"SAS address" : "0x4433221105000000"
+					}
+				]
+			},
+			"Inquiry Data" : "11 45 14"
+		},
+		"Drive /c1/e252/s6" : [
+			{
+				"EID:Slt" : "252:6",
+				"DID" : 13,
+				"State" : "Onln",
+				"DG" : 1,
+				"Size" : "1.745 TB",
+				"Intf" : "SATA",
+				"Med" : "SSD",
+				"SED" : "N",
+				"PI" : "N",
+				"SeSz" : "512B",
+				"Model" : "SAMSUNG MZ7LH1T90000-00000",
+				"Sp" : "U",
+				"Type" : "-"
+			}
+		],
+		"Drive /c1/e252/s6 - Detailed Information" : {
+			"Drive /c1/e252/s6 State" : {
+				"Shield Counter" : 0,
+				"Media Error Count" : 0,
+				"Other Error Count" : 0,
+				"Drive Temperature" : " 27C (80.60 F)",
+				"Predictive Failure Count" : 0,
+				"S.M.A.R.T alert flagged by drive" : "No"
+			},
+			"Drive /c1/e252/s6 Device attributes" : {
+				"SN" : "S455NY0N108206      ",
+				"Manufacturer Id" : "ATA     ",
+				"Model Number" : "SAMSUNG MZ7LH1T90000-00000",
+				"NAND Vendor" : "NA",
+				"WWN" : "1234567890",
+				"Firmware Revision" : "HXT7404Q",
+				"Raw size" : "1.746 TB [0xdf8fe2b0 Sectors]",
+				"Coerced size" : "1.745 TB [0xdf7f0000 Sectors]",
+				"Non Coerced size" : "1.745 TB [0xdf7fe2b0 Sectors]",
+				"Device Speed" : "6.0Gb/s",
+				"Link Speed" : "6.0Gb/s",
+				"NCQ setting" : "Enabled",
+				"Write Cache" : "N/A",
+				"Logical Sector Size" : "512B",
+				"Physical Sector Size" : "4 KB",
+				"Connector Name" : "Port 4 - 7 x1"
+			},
+			"Drive /c1/e252/s6 Policies/Settings" : {
+				"Drive position" : "DriveGroup:1, Span:0, Row:0",
+				"Enclosure position" : "1",
+				"Connected Port Number" : "5(path0) ",
+				"Sequence Number" : 2,
+				"Commissioned Spare" : "No",
+				"Emergency Spare" : "No",
+				"Last Predictive Failure Event Sequence Number" : 0,
+				"Successful diagnostics completion on" : "N/A",
+				"FDE Type" : "None",
+				"SED Capable" : "No",
+				"SED Enabled" : "No",
+				"Secured" : "No",
+				"Cryptographic Erase Capable" : "Yes",
+				"Sanitize Support" : "Not supported",
+				"Locked" : "No",
+				"Needs EKM Attention" : "No",
+				"PI Eligible" : "No",
+				"Certified" : "No",
+				"Wide Port Capable" : "No",
+				"Multipath" : "No",
+				"Port Information" : [
+					{
+						"Port" : 0,
+						"Status" : "Active",
+						"Linkspeed" : "6.0Gb/s",
+						"SAS address" : "0x4433221106000000"
+					}
+				]
+			},
+			"Inquiry Data" : "11 45 14"
+		}
+	}
+}
+]
+}

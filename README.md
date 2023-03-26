@@ -2,6 +2,8 @@
 
 Compatible with Python 3.5+ (Latest Python version in Debian 9). No third-party dependencies.
 
+Note: The testcase is not compatible with Python 3.5. You may need Python 3.7 to run testcases.
+
 /etc/telegraf/telegraf.d/raid.conf:
 
 ```
@@ -40,4 +42,5 @@ For ssacli, only "device" and "firmware" are valid, other values will be 0 or "N
 ## Limitation
 
 - Heavily relies on parsing the output of the RAID controller software.
+    - More testcase is needed.
 - Influxdb format serialization is naive.

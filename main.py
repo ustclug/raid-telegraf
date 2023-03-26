@@ -2,20 +2,7 @@
 import argparse
 
 
-def main(args):
-    if args.use == "megacli":
-        from megacli import get_disk_errors
-    elif args.use == "storcli":
-        from storcli import get_disk_errors
-    elif args.use == "ssacli":
-        from ssacli import get_disk_errors
-    else:
-        raise ValueError("Unexpected use value: {}".format(args.use))
-
-    result = get_disk_errors()
-    # influxdb format (line protocol without timestamp):
-    # raid_telegraf,device=Drive\ /c0/e32/s0 media_error=0,other_error=0,predictive_failure=0,firmware="Online, Spun up",smart_alert="No"
-
+def influxdb_gen(result):
     for adapter in result:
         for drive in result[adapter]:
             stat = result[adapter][drive]
@@ -31,6 +18,23 @@ def main(args):
                     smart_alert=stat["smart_alert"],
                 )
             )
+
+
+def main(args):
+    if args.use == "megacli":
+        from megacli import get_disk_errors
+    elif args.use == "storcli":
+        from storcli import get_disk_errors
+    elif args.use == "ssacli":
+        from ssacli import get_disk_errors
+    else:
+        raise ValueError("Unexpected use value: {}".format(args.use))
+
+    result = get_disk_errors()
+    # influxdb format (line protocol without timestamp):
+    # raid_telegraf,device=Drive\ /c0/e32/s0 media_error=0,other_error=0,predictive_failure=0,firmware="Online, Spun up",smart_alert="No"
+
+    influxdb_gen(result)
 
 
 if __name__ == "__main__":
