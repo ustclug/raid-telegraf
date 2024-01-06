@@ -3,6 +3,7 @@
 
 import subprocess as sp
 import os
+from typing import Dict
 
 SSACLI_EXEC = "/usr/sbin/ssacli"
 if not os.path.exists(SSACLI_EXEC):
@@ -30,7 +31,7 @@ ssacli = SsaCliBase()
 
 def get_disk_errors() -> dict:
     pdinfo = ssacli.get_physical_disk_info().strip().split(b"\n")
-    info = {0: {}}
+    info: Dict[int, Dict[str, Dict]] = {0: {}}
     for i in pdinfo:
         disk, status = i.rsplit(b":", 1)
         disk = disk.strip().decode("utf-8")

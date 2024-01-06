@@ -3,6 +3,7 @@
 import subprocess as sp
 import os
 import json
+from typing import Dict
 
 STORCLI_EXEC = "/opt/MegaRAID/storcli/storcli64"
 if not os.path.exists(STORCLI_EXEC):
@@ -35,7 +36,7 @@ class StorCliBase:
 storcli = StorCliBase()
 
 
-def update_dict(dict, key, value_dict):
+def update_dict(dict: Dict, key, value_dict) -> None:
     if key not in dict:
         dict[key] = value_dict
     else:
@@ -47,7 +48,7 @@ def get_disk_errors() -> dict:
     info = {}
     for adapter in pdinfo:
         adapter_id = adapter["Command Status"]["Controller"]
-        adapter_info = {}
+        adapter_info: Dict[str, Dict] = {}
         adapter_response = adapter["Response Data"]
         for key in adapter_response:
             if "Detailed Information" in key:

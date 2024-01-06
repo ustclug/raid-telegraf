@@ -2,7 +2,7 @@
 import argparse
 
 
-def influxdb_gen(result):
+def influxdb_gen(result: dict) -> None:
     for adapter in result:
         for drive in result[adapter]:
             stat = result[adapter][drive]
@@ -20,7 +20,7 @@ def influxdb_gen(result):
             )
 
 
-def main(args):
+def main(args) -> None:
     if args.use == "megacli":
         from megacli import get_disk_errors
     elif args.use == "storcli":

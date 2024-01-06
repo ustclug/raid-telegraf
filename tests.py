@@ -20,7 +20,7 @@ class MockSubprocess:
         )
 
 
-sys.modules["subprocess"] = MockSubprocess()
+sys.modules["subprocess"] = MockSubprocess()  # type: ignore
 import megacli, ssacli, storcli, mdadm
 
 

@@ -5,6 +5,7 @@ import subprocess as sp
 import re
 import os
 from collections import defaultdict
+from typing import DefaultDict
 
 MEGACLI_EXEC = "/opt/MegaRAID/MegaCli/MegaCli64"
 if not os.path.exists(MEGACLI_EXEC):
@@ -38,7 +39,7 @@ megacli = MegaCliBase()
 def get_disk_errors() -> dict:
     pdinfo = megacli.get_physical_disk_info().split(b"\n")
     adapter = 0
-    info = defaultdict(dict)
+    info: DefaultDict[int, dict] = defaultdict(dict)
     slot = {}
     for i in pdinfo:
         if b"Adapter #" in i:
