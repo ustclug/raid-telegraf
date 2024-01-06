@@ -42,7 +42,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("raid-telegraf")
     parser.add_argument(
-        "--use", choices=["megacli", "storcli", "ssacli"], required=True
+        "--use", choices=["megacli", "storcli", "ssacli", "mdadm"], required=True
     )
 
     args = parser.parse_args()
