@@ -27,6 +27,8 @@ def main(args):
         from storcli import get_disk_errors
     elif args.use == "ssacli":
         from ssacli import get_disk_errors
+    elif args.use == "mdadm":
+        from mdadm import get_disk_errors
     else:
         raise ValueError("Unexpected use value: {}".format(args.use))
 

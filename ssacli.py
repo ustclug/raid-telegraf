@@ -34,7 +34,10 @@ def get_disk_errors() -> dict:
     for i in pdinfo:
         disk, status = i.rsplit(b":", 1)
         disk = disk.strip().decode("utf-8")
+        # OK or Failed
         status = status.strip().decode("utf-8")
+        if status not in ["OK", "Failed"]:
+            status = f"Failed ({status})"
         info[0][disk] = {
             "media_error": 0,
             "other_error": 0,

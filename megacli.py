@@ -22,20 +22,20 @@ class MegaCliBase:
         if b"Adapter #0" not in output:
             raise RuntimeError("Self-check failed. Did you run this script with root?")
 
-    def run(self, args: list):
+    def run(self, args: list) -> bytes:
         ret = sp.run([MEGACLI_EXEC, *args], stdout=sp.PIPE)
         if ret.returncode != 0:
             raise RuntimeError("MegaCli returns a non-zero value.")
         return ret.stdout
 
-    def get_physical_disk_info(self):
+    def get_physical_disk_info(self) -> bytes:
         return self.run(["-PDlist", "-aALL", "-NoLog"])
 
 
 megacli = MegaCliBase()
 
 
-def get_disk_errors():
+def get_disk_errors() -> dict:
     pdinfo = megacli.get_physical_disk_info().split(b"\n")
     adapter = 0
     info = defaultdict(dict)

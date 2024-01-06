@@ -1,0 +1,53 @@
+{
+  "md127": {
+    "sdh1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "Spare",
+      "smart_alert": "No"
+    },
+    "sdc1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sdd1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sde1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sdf1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sdg1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "unknown5": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "Failed",
+      "smart_alert": "No"
+    },
+  }
+}

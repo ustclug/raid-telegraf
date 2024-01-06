@@ -1,0 +1,18 @@
+{
+  "md127": {
+    "sda1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sdc1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    }
+  }
+}

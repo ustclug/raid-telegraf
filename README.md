@@ -1,8 +1,6 @@
 # raid-telegraf
 
-Compatible with Python 3.5+ (Latest Python version in Debian 9). No third-party dependencies.
-
-Note: The testcase is not compatible with Python 3.5. You may need Python 3.7 to run testcases.
+Compatible with Python 3.7+ (Latest Python version in Debian 10). No third-party dependencies.
 
 /etc/telegraf/telegraf.d/raid.conf:
 
@@ -28,6 +26,7 @@ telegraf ALL=(root) NOPASSWD: /opt/raid-telegraf/main.py
 - megacli
 - storcli
 - ssacli (HPE, currently supports single controller only, only physical disk status string)
+- mdadm (with smartctl)
 
 ## Output
 

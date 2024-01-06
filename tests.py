@@ -3,6 +3,7 @@ import sys
 from types import SimpleNamespace
 import json
 from unittest import mock
+from unittest.mock import mock_open
 from io import StringIO
 from ast import literal_eval
 from main import influxdb_gen
@@ -10,6 +11,7 @@ from main import influxdb_gen
 
 class MockSubprocess:
     PIPE = 0
+    DEVNULL = 1
 
     def run(self, *args, **kwargs):
         return SimpleNamespace(
@@ -19,7 +21,7 @@ class MockSubprocess:
 
 
 sys.modules["subprocess"] = MockSubprocess()
-import megacli, ssacli, storcli
+import megacli, ssacli, storcli, mdadm
 
 
 class MockObject:
@@ -34,7 +36,9 @@ class MockObject:
 
 
 class TestParsers(unittest.TestCase):
-    def test_megacli_1(self):
+    maxDiff = None
+
+    def test_megacli(self):
         with open("test-fixtures/megacli_output_1.txt") as f:
             output = f.read()
         with open("test-fixtures/megacli_parsed_1.txt") as f:
@@ -42,7 +46,7 @@ class TestParsers(unittest.TestCase):
         megacli.megacli = MockObject(output.encode())
         self.assertDictEqual(megacli.get_disk_errors(), expected)
 
-    def test_storcli_1(self):
+    def test_storcli(self):
         with open("test-fixtures/storcli_output_1.txt") as f:
             output = f.read()
         with open("test-fixtures/storcli_parsed_1.txt") as f:
@@ -50,7 +54,7 @@ class TestParsers(unittest.TestCase):
         storcli.storcli = MockObject(json.loads(output))
         self.assertDictEqual(storcli.get_disk_errors(), expected)
 
-    def test_ssacli_1(self):
+    def test_ssacli(self):
         with open("test-fixtures/ssacli_output_1.txt") as f:
             output = f.read()
         with open("test-fixtures/ssacli_parsed_1.txt") as f:
@@ -58,10 +62,19 @@ class TestParsers(unittest.TestCase):
         ssacli.ssacli = MockObject(output.encode())
         self.assertDictEqual(ssacli.get_disk_errors(), expected)
 
+    def test_mdadm(self):
+        for i in range(1, 7 + 1):
+            with open(f"test-fixtures/mdadm_output_{i}.txt") as f:
+                output = f.read()
+            with open(f"test-fixtures/mdadm_parsed_{i}.txt") as f:
+                expected = literal_eval(f.read())
+            with mock.patch("builtins.open", mock_open(read_data=output)):
+                self.assertDictEqual(mdadm.get_disk_errors(), expected)
+
 
 class TestInfluxDBFormat(unittest.TestCase):
     @mock.patch("sys.stdout", new_callable=StringIO)
-    def test_megacli_1(self, mock_stdout: StringIO):
+    def test_megacli(self, mock_stdout: StringIO):
         with open("test-fixtures/megacli_parsed_1.txt") as f:
             parsed = literal_eval(f.read())
         with open("test-fixtures/megacli_result_1.txt") as f:
@@ -70,7 +83,7 @@ class TestInfluxDBFormat(unittest.TestCase):
         self.assertEqual(mock_stdout.getvalue(), expected)
 
     @mock.patch("sys.stdout", new_callable=StringIO)
-    def test_storcli_1(self, mock_stdout: StringIO):
+    def test_storcli(self, mock_stdout: StringIO):
         with open("test-fixtures/storcli_parsed_1.txt") as f:
             parsed = literal_eval(f.read())
         with open("test-fixtures/storcli_result_1.txt") as f:
@@ -79,13 +92,23 @@ class TestInfluxDBFormat(unittest.TestCase):
         self.assertEqual(mock_stdout.getvalue(), expected)
 
     @mock.patch("sys.stdout", new_callable=StringIO)
-    def test_ssacli_1(self, mock_stdout: StringIO):
+    def test_ssacli(self, mock_stdout: StringIO):
         with open("test-fixtures/ssacli_parsed_1.txt") as f:
             parsed = literal_eval(f.read())
         with open("test-fixtures/ssacli_result_1.txt") as f:
             expected = f.read()
         influxdb_gen(parsed)
         self.assertEqual(mock_stdout.getvalue(), expected)
+
+    @mock.patch("sys.stdout", new_callable=StringIO)
+    def test_mdadm(self, mock_stdout: StringIO):
+        for i in range(1, 7 + 1):
+            with open(f"test-fixtures/mdadm_parsed_{i}.txt") as f:
+                parsed = literal_eval(f.read())
+            with open(f"test-fixtures/mdadm_result_{i}.txt") as f:
+                expected = f.read()
+            influxdb_gen(parsed)
+            self.assertEqual(mock_stdout.getvalue(), expected)
 
 
 if __name__ == "__main__":

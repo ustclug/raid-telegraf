@@ -1,0 +1,122 @@
+{
+  "md1": {
+    "sda2": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sdb2": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+  },
+  "md2": {
+    "sda3": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sdb3": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+  },
+  "md3": {
+    "sdl1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sdk1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sdj1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sdi1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sdh1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sdg1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sdf1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sde1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sdd1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No",
+    },
+    "sdc1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No",
+    },
+  },
+  "md0": {
+    "sda1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+    "sdb1": {
+      "media_error": 0,
+      "other_error": 0,
+      "predictive_failure": 0,
+      "firmware": "OK",
+      "smart_alert": "No"
+    },
+  }
+}

@@ -42,7 +42,7 @@ def update_dict(dict, key, value_dict):
         dict[key].update(value_dict)
 
 
-def get_disk_errors():
+def get_disk_errors() -> dict:
     pdinfo = storcli.get_physical_disk_info()["Controllers"]
     info = {}
     for adapter in pdinfo:
@@ -71,7 +71,7 @@ def get_disk_errors():
                 drive_info = adapter_response[key][0]  # WHY THIS IS A LIST???
                 state = drive_info["State"]
                 spin = drive_info["Sp"]
-                firmware_state = "{state}, Spin {spin}".format(
+                firmware_state = "{state}, Spun {spin}".format(
                     state=state, spin="Up" if spin == "U" else "Down"
                 )
                 update_dict(
@@ -89,4 +89,4 @@ def get_disk_errors():
 if __name__ == "__main__":
     print(get_disk_errors())
     # Return example:
-    # {0: {'Drive /c0/e252/s0': {'firmware': 'Onln, Spin Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c0/e252/s1': {'firmware': 'Onln, Spin Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c0/e252/s4': {'firmware': 'Onln, Spin Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c0/e252/s5': {'firmware': 'Onln, Spin Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c0/e252/s6': {'firmware': 'Onln, Spin Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c0/e252/s7': {'firmware': 'Onln, Spin Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}}, 1: {'Drive /c1/e252/s0': {'firmware': 'Onln, Spin Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c1/e252/s1': {'firmware': 'Onln, Spin Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c1/e252/s2': {'firmware': 'Onln, Spin Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c1/e252/s3': {'firmware': 'Onln, Spin Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c1/e252/s4': {'firmware': 'Onln, Spin Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c1/e252/s5': {'firmware': 'Onln, Spin Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c1/e252/s6': {'firmware': 'Onln, Spin Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}}}
+    # {0: {'Drive /c0/e252/s0': {'firmware': 'Onln, Spun Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c0/e252/s1': {'firmware': 'Onln, Spun Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c0/e252/s4': {'firmware': 'Onln, Spun Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c0/e252/s5': {'firmware': 'Onln, Spun Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c0/e252/s6': {'firmware': 'Onln, Spun Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c0/e252/s7': {'firmware': 'Onln, Spun Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}}, 1: {'Drive /c1/e252/s0': {'firmware': 'Onln, Spun Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c1/e252/s1': {'firmware': 'Onln, Spun Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c1/e252/s2': {'firmware': 'Onln, Spun Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c1/e252/s3': {'firmware': 'Onln, Spun Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c1/e252/s4': {'firmware': 'Onln, Spun Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c1/e252/s5': {'firmware': 'Onln, Spun Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}, 'Drive /c1/e252/s6': {'firmware': 'Onln, Spun Up', 'media_error': 0, 'other_error': 0, 'predictive_failure': 0, 'smart_alert': 'No'}}}
