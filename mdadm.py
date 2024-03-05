@@ -13,6 +13,50 @@ class MdadmBase:
         # check smartctl: an exception will be raised if smartctl is not installed
         assert self.smartctl_code(["-h"]) == 0, "smartctl gives unexpected return code."
 
+    def get_mdadm_raid_detail(self):
+        command_output = sp.check_output(["sudo", "mdadm", "-D", "/dev/md0"]).decode(
+            "utf-8"
+        )
+        raid_info = {}
+        raid_info["Devices"] = []
+
+        overall_device_state = ""
+        in_devices_section = False
+
+        for line in command_output.split("\n"):
+            if line.startswith("/dev/md"):
+                continue
+            elif ":" in line:
+                key, value = [part.strip() for part in line.split(":", 1)]
+                if "Size" in key:
+                    value = value.split(" ")[0]
+                raid_info[key] = value
+            elif "Number" in line:
+                in_devices_section = True
+                # on the next line we will start parsing the devices
+            elif in_devices_section:
+                splat = re.split(r"\s{2,}", line)
+                if len(splat) < 2:
+                    continue
+                number = splat[1]
+                major = splat[2]
+                minor = splat[3]
+                device = splat[4]
+                state = splat[5]
+                raid_info["Devices"].append(
+                    {
+                        "Number": number,
+                        "Major": major,
+                        "Minor": minor,
+                        "RaidDevice": device,
+                        "State": state,
+                    }
+                )
+                if state not in overall_device_state:
+                    overall_device_state += state + ";"
+                raid_info["OverallDeviceState"] = overall_device_state
+        return raid_info
+
     # https://linux.die.net/man/8/smartctl, "Return values"
     def smartctl_code(self, args: list) -> int:
         ret = sp.run(["smartctl", *args], stdout=sp.DEVNULL, stderr=sp.DEVNULL)
@@ -103,6 +147,26 @@ def get_disk_errors() -> dict:
                 "smart_alert": "Yes" if smart_failed else "No",
             }
     return pdinfo
+
+
+def influxdb_print_mdadm_detail() -> None:
+    result = mdadm.get_mdadm_raid_detail()
+    print(
+        'raid_detail,device={device} raid_level="{raid_level}",array_size={array_size}i,used_dev_size={used_dev_size}i,raid_devices={raid_devices}i,total_devices={total_devices}i,active_devices={active_devices}i,working_devices={working_devices}i,failed_devices={failed_devices}i,spare_devices={spare_devices}i,state="{state}",agg_device_state="{device_state}"'.format(
+            device="md0",
+            raid_level=result.get("Raid Level", "unknown"),
+            array_size=result.get("Array Size", 0),
+            used_dev_size=result.get("Used Dev Size", 0),
+            raid_devices=result.get("Raid Devices", 0),
+            total_devices=result.get("Total Devices", 0),
+            active_devices=result.get("Active Devices", 0),
+            working_devices=result.get("Working Devices", 0),
+            failed_devices=result.get("Failed Devices", 0),
+            spare_devices=result.get("Spare Devices", 0),
+            state=result.get("State", "unknown"),
+            device_state=result.get("OverallDeviceState", "unknown"),
+        )
+    )
 
 
 if __name__ == "__main__":
