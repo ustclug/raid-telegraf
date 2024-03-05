@@ -5,6 +5,7 @@ from typing import Dict, Tuple
 
 MD_REGEX = re.compile(r"^(md.+?) :")
 DEVICE_REGEX = re.compile(r"(\w+?)\[(\d+)\](\(F\))?")
+RAID_REGEX = r"raid\d\s(.*)$"
 
 
 class MdadmBase:
@@ -31,8 +32,10 @@ class MdadmBase:
                 continue
             if MD_REGEX.match(l):
                 md_device = MD_REGEX.findall(l)[0]
-                device_str = l.split(" : ", 1)[1]
-                devices = device_str.split(" ")[2:]
+                match = re.search(RAID_REGEX, l)
+                assert match
+                device_str = match.group(1)
+                devices = device_str.split(" ")
                 for device in devices:
                     res = DEVICE_REGEX.findall(device)
                     assert res
