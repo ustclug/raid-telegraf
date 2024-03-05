@@ -28,7 +28,9 @@ def main(args) -> None:
     elif args.use == "ssacli":
         from ssacli import get_disk_errors
     elif args.use == "mdadm":
-        from mdadm import get_disk_errors
+        from mdadm import get_disk_errors, influxdb_print_mdadm_detail
+
+        influxdb_print_mdadm_detail()
     else:
         raise ValueError("Unexpected use value: {}".format(args.use))
 
