@@ -1,2 +1,3 @@
-raid_telegraf,device=sda1 media_error=0,other_error=0,predictive_failure=0,firmware="OK",smart_alert="No"
-raid_telegraf,device=sdc1 media_error=0,other_error=0,predictive_failure=0,firmware="OK",smart_alert="No"
+raid_telegraf,device=sda media_error=0,other_error=0,predictive_failure=0,firmware="OK",smart_alert="No"
+raid_telegraf,device=sdb media_error=0,other_error=0,predictive_failure=0,firmware="OK",smart_alert="No"
+raid_telegraf,device=unknown2 media_error=0,other_error=0,predictive_failure=0,firmware="Failed",smart_alert="No"
