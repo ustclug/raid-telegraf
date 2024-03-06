@@ -152,7 +152,7 @@ def get_disk_errors() -> dict:
 def influxdb_print_mdadm_detail() -> None:
     result = mdadm.get_mdadm_raid_detail()
     print(
-        'raid_detail,device={device} raid_level="{raid_level}",array_size={array_size}i,used_dev_size={used_dev_size}i,raid_devices={raid_devices}i,total_devices={total_devices}i,active_devices={active_devices}i,working_devices={working_devices}i,failed_devices={failed_devices}i,spare_devices={spare_devices}i,state="{state}",agg_device_state="{device_state}"'.format(
+        'raid_detail,device={device} raid_level="{raid_level}",array_size={array_size},used_dev_size={used_dev_size},raid_devices={raid_devices},total_devices={total_devices},active_devices={active_devices},working_devices={working_devices},failed_devices={failed_devices},spare_devices={spare_devices},state="{state}",agg_device_state="{device_state}"'.format(
             device="md0",
             raid_level=result.get("Raid Level", "unknown"),
             array_size=result.get("Array Size", 0),
