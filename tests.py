@@ -9,6 +9,7 @@ from ast import literal_eval
 from main import influxdb_gen
 
 
+NUM_MDADM_TESTS = 8
 class MockSubprocess:
     PIPE = 0
     DEVNULL = 1
@@ -63,7 +64,7 @@ class TestParsers(unittest.TestCase):
         self.assertDictEqual(ssacli.get_disk_errors(), expected)
 
     def test_mdadm(self):
-        for i in range(1, 7 + 1):
+        for i in range(1, NUM_MDADM_TESTS + 1):
             with open(f"test-fixtures/mdadm_output_{i}.txt") as f:
                 output = f.read()
             with open(f"test-fixtures/mdadm_parsed_{i}.txt") as f:
@@ -73,6 +74,8 @@ class TestParsers(unittest.TestCase):
 
 
 class TestInfluxDBFormat(unittest.TestCase):
+    maxDiff = None
+
     @mock.patch("sys.stdout", new_callable=StringIO)
     def test_megacli(self, mock_stdout: StringIO):
         with open("test-fixtures/megacli_parsed_1.txt") as f:
@@ -102,7 +105,7 @@ class TestInfluxDBFormat(unittest.TestCase):
 
     @mock.patch("sys.stdout", new_callable=StringIO)
     def test_mdadm(self, mock_stdout: StringIO):
-        for i in range(1, 7 + 1):
+        for i in range(1, NUM_MDADM_TESTS + 1):
             with open(f"test-fixtures/mdadm_parsed_{i}.txt") as f:
                 parsed = literal_eval(f.read())
             with open(f"test-fixtures/mdadm_result_{i}.txt") as f:
