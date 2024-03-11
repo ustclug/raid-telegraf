@@ -77,8 +77,16 @@ class MdadmBase:
             if MD_REGEX.match(l):
                 md_device = MD_REGEX.findall(l)[0]
                 match = re.search(RAID_REGEX, l)
-                assert match
-                device_str = match.group(1)
+                if not match:
+                    # TEMP fix to prevent crash on inactive array
+                    if "inactive " in l:
+                        device_str = l.split("inactive ")[1]
+                        # TODO handle inactive state better.
+                    else:
+                        raise AssertionError("cannot parse /proc/mdstat")
+                else:
+                    device_str = match.group(1)
+
                 devices = device_str.split(" ")
                 for device in devices:
                     res = DEVICE_REGEX.findall(device)

@@ -32,6 +32,10 @@ def main(args) -> None:
 
         if args.details:
             influxdb_print_mdadm_detail()
+        if args.get_errors:
+            result = get_disk_errors()
+            influxdb_gen(result)
+        return
     else:
         raise ValueError("Unexpected use value: {}".format(args.use))
 
@@ -48,6 +52,8 @@ if __name__ == "__main__":
         "--use", choices=["megacli", "storcli", "ssacli", "mdadm"], required=True
     )
     parser.add_argument("--details", type=bool, default=True)
+    parser.add_argument("--get-errors", type=bool, default=True)
+
 
     args = parser.parse_args()
 

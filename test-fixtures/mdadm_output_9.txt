@@ -1,0 +1,5 @@
+Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
+md0 : inactive sda[5](S) sde[4](S) sdc[1](S) sdd[3](S) sdb[0](S)
+      97658465280 blocks super 1.2
+       
+unused devices: <none>
