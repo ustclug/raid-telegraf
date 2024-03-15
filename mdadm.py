@@ -1,6 +1,6 @@
 # Uses /proc/mdstat and smartctl to get disk errors
-import subprocess as sp
 import re
+import subprocess as sp
 from typing import Dict, Tuple
 
 MD_REGEX = re.compile(r"^(md.+?) :")
@@ -139,6 +139,13 @@ class MdadmBase:
 
 
 mdadm = MdadmBase()
+
+
+def raid_array_exists() -> bool:
+    result = sp.run(["mdadm", "--detail", "--scan"], capture_output=True, text=True)
+    if result.returncode == 0 and "/dev/md" in result.stdout:
+        return True
+    return False
 
 
 def get_disk_errors() -> dict:

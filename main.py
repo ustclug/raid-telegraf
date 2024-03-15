@@ -28,8 +28,14 @@ def main(args) -> None:
     elif args.use == "ssacli":
         from ssacli import get_disk_errors
     elif args.use == "mdadm":
-        from mdadm import get_disk_errors, influxdb_print_mdadm_detail
+        from mdadm import (
+            get_disk_errors,
+            influxdb_print_mdadm_detail,
+            raid_array_exists,
+        )
 
+        if not raid_array_exists():
+            return
         if args.details:
             influxdb_print_mdadm_detail()
         if args.get_errors:
@@ -53,7 +59,6 @@ if __name__ == "__main__":
     )
     parser.add_argument("--details", type=bool, default=True)
     parser.add_argument("--get-errors", type=bool, default=True)
-
 
     args = parser.parse_args()
 
