@@ -9,7 +9,9 @@ from ast import literal_eval
 from main import influxdb_gen
 
 
-NUM_MDADM_TESTS = 8
+NUM_MDADM_TESTS = 11
+
+
 class MockSubprocess:
     PIPE = 0
     DEVNULL = 1
@@ -70,7 +72,14 @@ class TestParsers(unittest.TestCase):
             with open(f"test-fixtures/mdadm_parsed_{i}.txt") as f:
                 expected = literal_eval(f.read())
             with mock.patch("builtins.open", mock_open(read_data=output)):
-                self.assertDictEqual(mdadm.get_disk_errors(), expected)
+                self.assertDictEqual(
+                    mdadm.get_disk_errors(), expected, f"Mdadm Test {i}"
+                )
+
+
+def clear_stdout(mock_stdout: StringIO):
+    mock_stdout.truncate(0)
+    mock_stdout.seek(0)
 
 
 class TestInfluxDBFormat(unittest.TestCase):
@@ -84,6 +93,7 @@ class TestInfluxDBFormat(unittest.TestCase):
             expected = f.read()
         influxdb_gen(parsed)
         self.assertEqual(mock_stdout.getvalue(), expected)
+        clear_stdout(mock_stdout)
 
     @mock.patch("sys.stdout", new_callable=StringIO)
     def test_storcli(self, mock_stdout: StringIO):
@@ -93,6 +103,7 @@ class TestInfluxDBFormat(unittest.TestCase):
             expected = f.read()
         influxdb_gen(parsed)
         self.assertEqual(mock_stdout.getvalue(), expected)
+        clear_stdout(mock_stdout)
 
     @mock.patch("sys.stdout", new_callable=StringIO)
     def test_ssacli(self, mock_stdout: StringIO):
@@ -102,6 +113,7 @@ class TestInfluxDBFormat(unittest.TestCase):
             expected = f.read()
         influxdb_gen(parsed)
         self.assertEqual(mock_stdout.getvalue(), expected)
+        clear_stdout(mock_stdout)
 
     @mock.patch("sys.stdout", new_callable=StringIO)
     def test_mdadm(self, mock_stdout: StringIO):
@@ -111,7 +123,8 @@ class TestInfluxDBFormat(unittest.TestCase):
             with open(f"test-fixtures/mdadm_result_{i}.txt") as f:
                 expected = f.read()
             influxdb_gen(parsed)
-            self.assertEqual(mock_stdout.getvalue(), expected)
+            self.assertEqual(mock_stdout.getvalue(), expected, f"Mdadm Test {i}")
+            clear_stdout(mock_stdout)
 
 
 if __name__ == "__main__":

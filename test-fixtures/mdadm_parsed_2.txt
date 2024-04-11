@@ -14,13 +14,6 @@
       "firmware": "OK",
       "smart_alert": "No"
     },
-    "unknown3": {
-      "media_error": 0,
-      "other_error": 0,
-      "predictive_failure": 0,
-      "firmware": "OK",
-      "smart_alert": "No"
-    },
     "sdd1": {
       "media_error": 0,
       "other_error": 0,
@@ -39,7 +32,7 @@
       "media_error": 0,
       "other_error": 0,
       "predictive_failure": 0,
-      "firmware": "Spare",
+      "firmware": "OK",
       "smart_alert": "No"
     }
   }

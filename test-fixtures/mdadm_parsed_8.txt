@@ -14,12 +14,12 @@
       "firmware": "OK",
       "smart_alert": "No"
     },
-    "unknown2": {
+    "unknown0": {
       "media_error": 0,
       "other_error": 0,
       "predictive_failure": 0,
       "firmware": "Failed",
       "smart_alert": "No"
-    },
+    }
   }
 }

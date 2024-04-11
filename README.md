@@ -27,6 +27,7 @@ telegraf ALL=(root) NOPASSWD: /opt/raid-telegraf/main.py
 - storcli
 - ssacli (HPE, currently supports single controller only, only physical disk status string)
 - mdadm (with smartctl)
+    - For mdadm, also check [telegraf official mdstat plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mdstat).
 
 ## Output
 

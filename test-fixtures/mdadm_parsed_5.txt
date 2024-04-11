@@ -4,7 +4,7 @@
       "media_error": 0,
       "other_error": 0,
       "predictive_failure": 0,
-      "firmware": "Spare",
+      "firmware": "OK",
       "smart_alert": "No"
     },
     "sdc1": {
@@ -40,13 +40,6 @@
       "other_error": 0,
       "predictive_failure": 0,
       "firmware": "OK",
-      "smart_alert": "No"
-    },
-    "unknown5": {
-      "media_error": 0,
-      "other_error": 0,
-      "predictive_failure": 0,
-      "firmware": "Failed",
       "smart_alert": "No"
     },
   }

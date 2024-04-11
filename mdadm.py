@@ -3,9 +3,9 @@ import subprocess as sp
 import re
 from typing import Dict, Tuple
 
-MD_REGEX = re.compile(r"^(md.+?) :")
-DEVICE_REGEX = re.compile(r"(\w+?)\[(\d+)\](\(F\))?")
-RAID_REGEX = r"raid\d\s(.*)$"
+MD_REGEX = re.compile(r"^(md.+?) : (in)?active( \([a-z-]+\))? (\w+)")
+DEVICE_REGEX = re.compile(r" (\w+?)\[(\d+)\]((\([WJFSR]\))*)")
+SYNC_REGEX = re.compile(r".+\[([U_]+)\]$")
 
 
 class MdadmBase:
@@ -18,59 +18,42 @@ class MdadmBase:
         ret = sp.run(["smartctl", *args], stdout=sp.DEVNULL, stderr=sp.DEVNULL)
         return ret.returncode
 
-    # https://raid.wiki.kernel.org/index.php/Mdstat
+    # https://raid.wiki.kernel.org/index.php/Mdstat is a bit misleading...
+    # https://gist.github.com/taoky/f739fad4e7ef2d445b946b379cf2fa6b
     def mdstat_parse(self, mdstat: str) -> dict:
         ret = {}
 
         md_device = None
-        sd_mapping: Dict[int, Tuple[str, bool]] = {}
-        sd_results: Dict[str, str] = {}
-        check_status = False
         for l in mdstat.split("\n"):
             l = l.strip()
-            if l.startswith("Personalities"):
-                continue
             if MD_REGEX.match(l):
-                md_device = MD_REGEX.findall(l)[0]
-                match = re.search(RAID_REGEX, l)
-                assert match
-                device_str = match.group(1)
-                devices = device_str.split(" ")
+                md_device = MD_REGEX.findall(l)[0][0]
+                devices = DEVICE_REGEX.findall(l)
+                md_results = {}
                 for device in devices:
-                    res = DEVICE_REGEX.findall(device)
-                    assert res
-                    failed = False
-                    if res[0][2] == "(F)":
-                        failed = True
-                    sd_mapping[int(res[0][1])] = (res[0][0], failed)
-                check_status = True
-                continue
-            if check_status:
-                status = l.split(" ")[-1]
-                # strip [ and ]
-                status = status[1:-1]
-                sdkeys = list(sd_mapping.keys())
-                for i, s in enumerate(status):
-                    if s == "U":
-                        s = "OK"
-                    elif s == "_":
-                        s = "Failed"
-                    else:
-                        s = "Unknown"
-                    if i not in sdkeys:
-                        sd_results[f"unknown{i}"] = s
-                    else:
-                        sdkeys.remove(i)
-                        sd_results[sd_mapping[i][0]] = s
-                for i in sdkeys:
-                    if sd_mapping[i][1]:
-                        sd_results[sd_mapping[i][0]] = "Failed (Spare)"
-                    else:
-                        sd_results[sd_mapping[i][0]] = "Spare"
-                ret[md_device] = sd_results
-                check_status = False
-                sd_mapping = {}
-                sd_results = {}
+                    output = "OK"
+                    device_name = device[0]
+                    status = device[2]
+                    if "(F)" in status:
+                        output = "Failed"
+                    if "(W)" in status:
+                        output += " (Writemostly)"
+                    if "(J)" in status:
+                        output += " (Journal)"
+                    if "(S)" in status:
+                        output += " (Spare)"
+                    if "(R)" in status:
+                        output += " (Replacement)"
+                    md_results[device_name] = output
+                ret[md_device] = md_results
+            syncs = SYNC_REGEX.match(l)
+            if syncs:
+                assert md_device is not None
+                sync_status = len(syncs[1])
+                current_len = len(ret[md_device])
+                for i in range(sync_status - current_len):
+                    ret[md_device][f"unknown{i}"] = "Failed"
+                md_device = None
         return ret
 
     # Tuple[result from mdstat, result from smartctl]
