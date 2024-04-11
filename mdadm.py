@@ -8,6 +8,9 @@ DEVICE_REGEX = re.compile(r"(\w+?)\[(\d+)\](\(F\))?")
 RAID_REGEX = r"raid\d\s(.*)$"
 
 
+# NOTE - you must always run mdadm (and other privileged) commands using SUDO! telegraf docker image runs as root, but the plugins are not run as root.
+
+
 class MdadmBase:
     def __init__(self) -> None:
         # check smartctl: an exception will be raised if smartctl is not installed
@@ -142,7 +145,9 @@ mdadm = MdadmBase()
 
 
 def raid_array_exists() -> bool:
-    result = sp.run(["mdadm", "--detail", "--scan"], capture_output=True, text=True)
+    result = sp.run(
+        ["sudo", "mdadm", "--detail", "--scan"], capture_output=True, text=True
+    )
     if result.returncode == 0 and "/dev/md" in result.stdout:
         return True
     return False
